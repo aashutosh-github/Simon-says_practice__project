@@ -29,6 +29,9 @@ body {
 .red {
   background-color: red;
 }
-.flash {
+.game-flash {
   background-color: white;
+}
+.user-flash {
+  background-color: black;
 }
