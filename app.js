@@ -55,16 +55,18 @@ for (let btn of btns) {
 }
 
 function checkAns(index) {
-  if (gameSeq[index] === userSeq[index]) {
-    if (gameSeq.length == userSeq.length) {
+  if (userSeq[index] === gameSeq[index]) {
+    if (userSeq.length === gameSeq.length) {
       setTimeout(levelUp, 500);
     }
   } else {
-    if (level > 1) {
+    if (score >= 0 && start == true) {
       score = level - 1;
-    }
-    if (score > highestScore && score > 0) {
-      highestScore = score;
+      if (score > highestScore && score >= 0) {
+        highestScore = score;
+      }
+    } else {
+      score = 0;
     }
     h2.innerHTML = `Game Over! Your score was <b>${score}</b> <br> Highest score : ${highestScore} <br> Press any key to start.`;
     reset();
